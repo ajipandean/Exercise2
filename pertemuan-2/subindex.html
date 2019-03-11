@@ -1,0 +1,40 @@
+<!-- bit.ly/github-jsdc-b1-2 -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>JavaScript | Pertemuan 2</title>
+</head>
+<body>
+  
+  <h1>Muhamad Aji Pandean Mertayasa</h1>
+
+
+  <input type="number" name="num" id="num">
+  <button id="btn">4</button>
+  <button id="add">+</button>
+
+  <script>
+    var input = document.getElementById('num');
+    var btn = document.getElementById('btn');
+    var add = document.getElementById('add');
+
+    btn.onclick = function() {
+      input.value = parseInt(btn.innerHTML)
+      var int1 = input.value;
+      console.log("Int 1 = " + int1)
+    }
+    add.onclick = function() {
+      input.value = '';
+      btn.onclick = function() {
+        input.value = parseInt(btn.innerHTML)
+        var int2 = input.value;
+        console.log("Int 2 = " + int2)
+      }
+    }
+  </script>
+</body>
+</html>
