@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>JavaScript Calculator by Muhamad Aji Pandean Mertayasa</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  
+  <div id="calculator-app">
+    <div class="section title">
+      <h3>simple calculator app</h3>
+    </div>
+    <div class="wrapper">
+      <div class="section result-container">
+        <p id="subtitle">result</p>
+        <p id="result-field"><span id="operation"></span> = <span id="result-number"></span></p>
+      </div>
+      <div class="section input-container">
+        <input type="text" name="input" id="input" placeholder="0" readonly>
+      </div>
+      <div class="section keys-container">
+        <div class="keys-list">
+          <button class="keys-item" onclick="logged(event);">1</button>
+          <button class="keys-item" onclick="logged(event);">2</button>
+          <button class="keys-item" onclick="logged(event);">3</button>
+          <button class="keys-item action-key" onclick="logged(event);">+</button>
+        </div>
+        <div class="keys-list">
+          <button class="keys-item" onclick="logged(event);">4</button>
+          <button class="keys-item" onclick="logged(event);">5</button>
+          <button class="keys-item" onclick="logged(event);">6</button>
+          <button class="keys-item action-key" onclick="logged(event);">-</button>
+        </div>
+        <div class="keys-list">
+          <button class="keys-item" onclick="logged(event);">7</button>
+          <button class="keys-item" onclick="logged(event);">8</button>
+          <button class="keys-item" onclick="logged(event);">9</button>
+          <button class="keys-item action-key" onclick="logged(event);">*</button>
+        </div>
+        <div class="keys-list">
+          <button 
+            class="keys-item"
+            onclick="input.value = '';">clear</button>
+          <button class="keys-item" onclick="logged(event);">0</button>
+          <button class="keys-item" onclick="equalButton();">=</button>
+          <button class="keys-item action-key" onclick="logged(event);">/</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

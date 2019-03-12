@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Calculator</title>
+</head>
+<style>
+  .action-keys > button {
+    padding: 5px;
+    margin: 0 5px;
+    font-size: 18px;
+  }
+</style>
+<body>
+
+  <h1>Calculator</h1>
+  
+  <div class="wrapper">
+    <p>
+      <span id="calculate"></span> =
+      <span id="result"></span>
+    </p>
+    <input type="text" name="input-num" id="input-num" placeholder="0" style="width:330px;" readonly>
+    <br><br>
+    <div class="keys">
+      <button
+        class="key-num-1" 
+        onclick="logged(event)">1</button>
+      <button
+        class="key-num"
+        onclick="logged(event)">2</button>
+      <button
+        class="key-num"
+        onclick="logged(event)">3</button>
+      <br>
+      <button
+        class="key-num"
+        onclick="logged(event)">4</button>
+      <button
+        class="key-num"
+        onclick="logged(event)">5</button>
+      <button
+        class="key-num"
+        onclick="logged(event)">6</button>
+      <br>
+      <button
+        class="key-num"
+        onclick="logged(event)">7</button>
+      <button
+        class="key-num"
+        onclick="logged(event)">8</button>
+      <button
+        class="key-num"
+        onclick="logged(event)">9</button>
+      <button
+        class="key-num"
+        onclick="logged(event)">0</button>
+      <button 
+        onclick="
+          calc = document.querySelector('#calculate');
+          res = document.querySelector('#result');
+          str = input.value;
+          
+          if(
+            str.startsWith('+', 0) || 
+            str.startsWith('-', 0) || 
+            str.startsWith('*', 0) || 
+            str.startsWith('/', 0) 
+          ) {
+            result = eval('0' + input.value);
+            calc.innerHTML = '0' + input.value;
+          } else {
+            result = eval(input.value);
+            calc.innerHTML = input.value;
+          }
+
+          res.innerHTML = result;
+
+          input.value = '';
+          for(let i = 0; i < actionkeys.length; i++) {
+            actionkeys[i].removeAttribute('disabled');
+          }
+        ">=</button>
+    </div>
+    <br>
+    <div class="action-keys">
+      <button class="plus" onclick="logged(event)">+</button>
+      <button class="minus" onclick="logged(event)">-</button>
+      <button class="multiply" onclick="logged(event)">*</button>
+      <button class="divide" onclick="logged(event)">/</button>
+    </div>
+    <br>
+    <div class="clear">
+      <button 
+        id="clear"
+        onclick="input.value = '';">clear</button>
+    </div>
+  </div>
+  
+
+  <script>
+    var input = document.querySelector('#input-num')
+    var actionkeys = document.querySelectorAll('.action-keys > button')
+    
+    function logged(e) {
+      input.value += e.target.innerHTML;
+      let str = input.value;
+      if(
+        str.endsWith('+') || 
+        str.endsWith('-') || 
+        str.endsWith('*') || 
+        str.endsWith('/') 
+      ) {
+        for(let i = 0; i < actionkeys.length; i++) {
+          actionkeys[i].setAttribute('disabled', 'disabled');
+        }
+      } else {
+        for(let i = 0; i < actionkeys.length; i++) {
+          actionkeys[i].removeAttribute('disabled');
+        }
+      }
+    }
+  </script>
+</body>
+</html>
